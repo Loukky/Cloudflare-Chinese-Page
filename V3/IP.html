@@ -15,7 +15,11 @@
 <style type="text/css">body{margin:0;padding:0}</style>
 <script type="text/javascript" src="https://cloudflare.com/cdn-cgi/scripts/zepto.min.js"></script>
 <script type="text/javascript" src="https://cloudflare.com/cdn-cgi/scripts/cf.common.js"></script>
-
+<script type="text/javascript">
+    window.onload = function runScript(){
+        document.getElementById("domainName").innerHTML = window.location.hostname;
+    };
+</script>
 </head>
 <body>
   <div id="cf-wrapper">
@@ -23,7 +27,7 @@
     <div id="cf-error-details" class="cf-error-details-wrapper">
       <div class="cf-wrapper cf-header cf-error-overview">
         <h1 data-translate="block_headline">抱歉，您已被阻止</h1>
-        <h2 class="cf-subheadline"><span data-translate="unable_to_access">您无法访问</span> 黄健周的创客空间</h2>
+        <h2 class="cf-subheadline"><span data-translate="unable_to_access">您无法访问</span> <span id ="domainName"></span></h2>
       </div><!-- /.header -->
 
       <div class="cf-section cf-highlight">
@@ -41,13 +45,13 @@
           <div class="cf-column">
             <h2 data-translate="blocked_why_headline">为什么我被阻止？</h2>
 
-            <p data-translate="blocked_why_detail">本网站（黄健周的创客空间）的所有者已禁止您的IP地址/国家/地区，因此您不能访问该网站。</p>
+            <p data-translate="blocked_why_detail" style="display:inline-block">本网站（</p><span id="domainName" style="display:inline-block"></span><p style="display:inline-block">）的所有者已禁止您的IP地址/国家/地区，因此您不能访问该网站。</p>
           </div>
 
           <div class="cf-column">
             <h2 data-translate="blocked_resolve_headline">我该怎么解决？</h2>
 
-            <p data-translate="blocked_resolve_detail">您可以通过电子邮件发送网站所有者 (<a href="mailto:Admin@DevHjz.com">Admin@DevHjz.com</a>)，让我们知道您被阻止了。 请提供您在此页显示时的IP以及底部的 Cloudflare Ray ID。 </p>
+            <p data-translate="blocked_resolve_detail">您可以通过电子邮件发送网站所有者，让他们知道您被阻止了。 请提供您在此页显示时的IP以及底部的 Cloudflare Ray ID。 </p>
           </div>
         </div>
       </div><!-- /.section -->

@@ -15,7 +15,11 @@
 <style type="text/css">body{margin:0;padding:0}</style>
 <script type="text/javascript" src="https://cloudflare.com/cdn-cgi/scripts/zepto.min.js"></script>
 <script type="text/javascript" src="https://cloudflare.com/cdn-cgi/scripts/cf.common.js"></script>
-
+<script type="text/javascript">
+    window.onload = function runScript(){
+        document.getElementById("domainName").innerHTML = window.location.hostname;
+    };
+</script>
 </head>
 <body>
   <div id="cf-wrapper">
@@ -36,7 +40,7 @@
         <div class="cf-columns two">
           <div class="cf-column">
             <h2 data-translate="what_happened">发生了什么？</h2>
-            <p>该网站的所有者（黄健周的创客空间）已暂时禁止您访问该网站。</p>
+            <p style="display:inline-block">该网站的所有者（</p><p id ="domainName" style="display:inline-block"></p><p style="display:inline-block">）已暂时禁止您访问该网站。</p>
           </div>
 
           
